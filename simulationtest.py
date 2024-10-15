@@ -52,7 +52,7 @@ def visualize_model(crowd_model):
     #Visualiser grid'et
     plt.imshow(grid, interpolation='nearest', cmap='Blues')
     plt.show(block=False)
-    plt.pause(0.5)
+    plt.pause(0.5) #opdater hvert halve sekund
     plt.clf()
 
 #Opretter en instans af CrowdModel med 5 agenter og et 10x10 grid
