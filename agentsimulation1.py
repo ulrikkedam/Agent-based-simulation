@@ -87,3 +87,7 @@ crowd = CrowdModel(50, 10, 10)
 for i in range(20):
     crowd.step()  # Kører ét trin af simulationen
     visualize_model(crowd, i + 1)  # Visualiser grid'et for hvert trin med trin nummer
+    
+#for i in range(20):
+ #   crowd.step()  # Kør ét trin af flow-modellen
+  #  visualize_flow_with_background(crowd_model, i + 1, 'lukketvenue.png')  # Path til koncertsal billede

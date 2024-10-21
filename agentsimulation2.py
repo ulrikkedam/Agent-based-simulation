@@ -2,22 +2,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-# Opret en grid-repræsentation af crowd density i koncertsalen
+#Opret en grid-repræsentation af crowd density i koncertsalen
 class CrowdFlowModel:
     def __init__(self, width, height, num_people):
         self.grid = np.zeros((width, height))  # Gitter, der repræsenterer tætheden af mennesker
         self.num_people = num_people
 
-        # Placér folk tilfældigt i grid'et
+        #Placér folk tilfældigt i grid'et
         for _ in range(num_people):
-            x = np.random.randint(1, width)  # Undgå at placere på scenen (række 0)
+            x = np.random.randint(1, width)  #Undgå at placere på scenen (række 0)
             y = np.random.randint(0, height)
-            self.grid[x, y] += 1  # Tilføj en person til en tilfældig celle
+            self.grid[x, y] += 1  #Tilføj en person til en tilfældig celle
 
-        # Markér scenen som uoverkommelig
-        self.grid[0, :] = 0  # Scene-række (øverste række)
+        #Markér scenen som uoverkommelig
+        self.grid[0, :] = 0  #Scene-række (øverste række)
 
-    # Simuler crowd flow ved at flytte folk mod udgangene
+    #Simuler crowd flow ved at flytte folk mod udgangene
     def step(self):
         new_grid = np.zeros_like(self.grid)
 
@@ -91,4 +91,4 @@ crowd_model = CrowdFlowModel(10, 10, 100)
 # Kør simulationen i 10 trin og visualiser crowd flow ovenpå en koncertsal baggrund
 for i in range(20):
     crowd_model.step()  # Kør ét trin af flow-modellen
-    visualize_flow_with_background(crowd_model, i + 1, 'koncertsal.png')  # Path til koncertsal billede
+    visualize_flow_with_background(crowd_model, i + 1, 'lukketvenue.png')  # Path til koncertsal billede
