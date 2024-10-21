@@ -88,7 +88,7 @@ def visualize_model_with_background(crowd_model, step_number, background_image):
 # Opretter en instans af CrowdModel med 50 agenter og et 10x10 grid
 crowd = CrowdModel(50, 10, 10)
 
-# Kører simulationen i 20 trin med visualisering af koncertsal med baggrundsbillede
+# Kører simulationen i 20 trin
 for i in range(20):
     crowd.step()  # Kører ét trin af simulationen
-    visualize_model_with_background(crowd, i + 1, 'lukketvenue.png')  # Sti til dit baggrundsbillede
+    visualize_model_with_background(crowd, i + 1, 'lukketvenue.png')
